@@ -1,0 +1,59 @@
+:root{
+  
+
+  --cream: #FDF7E4;
+  --cream-purple: #DCBFFF;
+  --cream-light-blue: #C4DFDF;
+  --cream-green: #BCEAD5;
+
+  --font-color: #0F0F0F;
+  --font-negative-color: #FAFAFA;
+
+  --font: "Raleway", sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+html{
+  font-size: 62.5%;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body{
+  font-size: 1.8rem;
+  color: var(--font-color);
+}
+
+li{
+  list-style: none;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+input{
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+  color: var(--font-color);
+}
