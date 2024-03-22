@@ -19,8 +19,7 @@
         <button>
           Get Started
           <span class="line"></span>
-          <img class="btn_start-icon" src="https://img.icons8.com/ios/50/expensive-2--v1.png"
-            alt="expensive-2--v1" />
+          <img class="btn_start-icon" src="https://img.icons8.com/ios/50/expensive-2--v1.png" alt="expensive-2--v1" />
         </button>
       </div>
       <div class="newsletter_box">
@@ -30,7 +29,8 @@
         <form>
           <input type="email" placeholder="Email">
           <button class="btn_form" type="submit">
-            <img class="btn_form-icon" width="40" height="40" src="https://img.icons8.com/ios-filled/50/circled-left-2.png" alt="circled-left-2"/>
+            <img class="btn_form-icon" width="40" height="40"
+              src="https://img.icons8.com/ios-filled/50/circled-left-2.png" alt="circled-left-2" />
           </button>
         </form>
       </div>
@@ -39,25 +39,47 @@
       <img :src="logo" alt="Logo">
     </div>
   </Container>
-  <Carousel/>
+  <Carousel />
+  <Container>
+    <section class="section_plans">
+      <h3>Start with 0$, it's so easy</h3>
+      <h2>You can chose our plans</h2>
+      <div class="plans_section">
+        <Card v-for="card in cards" :key="card.id_card" :id="card.id_card" :titulo="card.titulo" :texto_1="card.texto1" :texto_2="card.texto2" :texto_3="card.texto3" :texto_4="card.texto4" />
+      </div>
+    </section>
+
+  </Container>
 
 </template>
 
 <script>
 import Container from '@/components/Layer.vue';
 import Carousel from '@/components/Carousel.vue';
-import { ref } from 'vue';
+import Card from '@/components/Card.vue'
 import logoSVG from '@/assets/img-2.png';
+import jsonData from '@/data/card.json'
+import { ref } from 'vue';
+
 
 export default {
   components: {
     Container,
-    Carousel
+    Carousel,
+    Card
   },
   setup() {
     const logo = ref(logoSVG);
-    
+
     return { logo };
+  },
+  data(){
+    return {
+      cards: []
+    }
+  },
+  created(){
+    this.cards = jsonData
   }
 }
 
@@ -65,7 +87,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* ------------- HERO BOXES -------------  */
 .hero_box-1,
 .hero_box-2 {
@@ -136,7 +157,7 @@ export default {
 }
 
 
-.line{
+.line {
   width: 2rem;
   height: 1.5rem;
   background-color: var(--font-color);
@@ -157,28 +178,29 @@ export default {
 }
 
 /* ------------- HERO NEWSLETTER -------------  */
-.newsletter_box{
+.newsletter_box {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.newsletter_box p{
+.newsletter_box p {
   font-weight: 500;
   line-height: 3.5rem;
 }
-.newsletter_box span{
+
+.newsletter_box span {
   font-weight: 700;
 }
 
-.newsletter_box form{
+.newsletter_box form {
   display: flex;
   align-items: center;
   width: fit-content;
   border-radius: 6rem;
 }
 
-.newsletter_box input{
+.newsletter_box input {
   padding: 1.3rem;
   width: fit-content;
   border: 2px solid var(--font-color);
@@ -186,21 +208,21 @@ export default {
   font-size: 1.4rem;
 }
 
-.newsletter_box input::placeholder{
+.newsletter_box input::placeholder {
   color: var(--font-color);
   font-weight: 600;
 }
 
-.btn_form{
+.btn_form {
   cursor: pointer;
 }
 
-.btn_form-icon{
+.btn_form-icon {
   transform: rotate(140deg);
 }
 
 /* ------------- HERO BOX 2 -------------  */
-.hero_box-2{
+.hero_box-2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,19 +232,55 @@ export default {
   padding: 2rem;
 }
 
-.hero_box-2 img{
+.hero_box-2 img {
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.404));
 }
 
-@media (min-width: 900px) {
-    .hero_box-2{
-      justify-content: flex-start;
-      width: fit-content;
-    }
+/* ------------- SECTION PLANS -------------  */
+.section_plans{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
 
-    .hero_box-1{
-      width: 50%;
-    }
-    
+.section_plans h3{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.section_plans h2{
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.plans_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* ------------- MEDIA QUERIES -------------  */
+
+@media (min-width: 900px) {
+  .hero_box-2 {
+    justify-content: flex-start;
+    width: fit-content;
+  }
+
+  .hero_box-1 {
+    width: 50%;
+  }
+
+  .plans_section{
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
 }
 </style>
