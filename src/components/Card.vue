@@ -57,6 +57,8 @@ export default defineComponent({
 .card {
     display: flex;
     flex-direction: column;
+    max-width: 35rem;
+    width: 100%;
     gap: 3rem;
 }
 
@@ -71,7 +73,7 @@ export default defineComponent({
 
 .card_number::after{
     content: "";
-    width: 25rem;
+    width: 9rem;
     height: .1rem;
     background-color: var(--font-color);
     position: absolute;
@@ -79,21 +81,15 @@ export default defineComponent({
     bottom: 1.8rem;
 }
 
-.line {
-    width: 9rem;
-    height: .1rem;
-    background-color: var(--font-color);
-}
 
 .card_container {
-    max-width: 40rem;
     width: 100%;
     height: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
-    padding: 2rem;
+    padding: 1.5rem;
     border: 1px dotted var(--font-color);
     border-radius:1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
@@ -115,6 +111,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-weight: 500;
 }
 
 .btn_see-more {
@@ -124,4 +121,5 @@ export default defineComponent({
     border-radius: 5rem;
     ;
 }
+
 </style>

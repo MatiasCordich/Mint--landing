@@ -30,7 +30,7 @@
           <input type="email" placeholder="Email">
           <button class="btn_form" type="submit">
             <img class="btn_form-icon" width="40" height="40"
-              src="https://img.icons8.com/ios-filled/50/circled-left-2.png" alt="circled-left-2" />
+              src="https://img.icons8.com/ios-filled/0F0F0F/50/0F0F0Fcircled-left-2.png" alt="circled-left-2" />
           </button>
         </form>
       </div>
@@ -45,9 +45,44 @@
       <h3>Start with 0$, it's so easy</h3>
       <h2>You can chose our plans</h2>
       <div class="plans_section">
-        <Card v-for="card in cards" :key="card.id_card" :id="card.id_card" :titulo="card.titulo" :texto_1="card.texto1" :texto_2="card.texto2" :texto_3="card.texto3" :texto_4="card.texto4" />
+        <Card v-for="card in cards" :key="card.id_card" :id="card.id_card" :titulo="card.titulo" :texto_1="card.texto1"
+          :texto_2="card.texto2" :texto_3="card.texto3" :texto_4="card.texto4" />
       </div>
     </section>
+  </Container>
+  <Container>
+    <div class="grid_section-titles">
+      <h3 class="grid_sections-title-mini">Your wallet, your world</h3>
+      <h2 class="grid_sections-title">
+        Infinite possibilities
+      </h2>
+      <section class="grid_benefits">
+        <div class="dummy g-1">
+          <img width="128" height="128" src="https://img.icons8.com/wired/128/0f0f0f/bitcoin.png" alt="bitcoin" />
+        </div>
+        <div class="dummy g-2">
+          <img src="https://img.icons8.com/wired/128/0f0f0f/bank-card-back-side.png" alt="bank-card-back-side" />
+        </div>
+        <div class="dummy g-3">
+          <img src="https://img.icons8.com/wired/128/0f0f0f/security.png" alt="security" />
+        </div>
+        <div class="dummy g-4">
+          <img src="https://img.icons8.com/wired/128/0f0f0f/service.png" alt="service" />
+
+
+        </div>
+        <div class="dummy g-5">
+          <img width="128" height="128" src="https://img.icons8.com/wired/128/0f0f0f/recycle-sign.png"
+            alt="recycle-sign" />
+        </div>
+        <div class="dummy g-6">
+          <img width="128" height="128" src="https://img.icons8.com/wired/128/vip.png" alt="vip" />
+
+
+        </div>
+      </section>
+    </div>
+
 
   </Container>
 
@@ -73,12 +108,12 @@ export default {
 
     return { logo };
   },
-  data(){
+  data() {
     return {
       cards: []
     }
   },
-  created(){
+  created() {
     this.cards = jsonData
   }
 }
@@ -237,7 +272,7 @@ export default {
 }
 
 /* ------------- SECTION PLANS -------------  */
-.section_plans{
+.section_plans {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,24 +280,61 @@ export default {
   width: 100%;
 }
 
-.section_plans h3{
+.section_plans h3 {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.section_plans h2{
+.section_plans h2 {
   font-size: 4rem;
   font-weight: 900;
   text-align: center;
 }
 
-.plans_section{
+.plans_section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   width: 100%;
 }
 
+/* ------------- GRID SECTION -------------  */
+.grid_section-titles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.grid_sections-title-mini {
+  text-align: left;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.grid_sections-title {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.grid_benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2rem;
+}
+
+.dummy {
+  width: 100%;
+  height: fit-content;
+  border: 2px dotted var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 3rem;
+}
 
 /* ------------- MEDIA QUERIES -------------  */
 
@@ -276,11 +348,47 @@ export default {
     width: 50%;
   }
 
-  .plans_section{
+  .plans_section {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .grid_benefits {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
   }
+
+  .g-1 {
+    grid-area: 1/3/3/5;
+    height: 100%;
+  }
+
+  .g-2 {
+    grid-area: 3/ 3 / 4 / 5;
+    height: 100%;
+  }
+
+  .g-3 {
+    grid-area: 4 / 3 / 4 / 5;
+  }
+
+  .g-4 {
+    grid-area: 1/1/2/3;
+  }
+
+  .g-5 {
+    grid-area: 2 / 2 / 5;
+    height: 100%
+  }
+
+  .g-6 {
+    grid-area: 2 / 1 / 5;
+    height: 100%;
+  }
+
+
+
 
 }
 </style>

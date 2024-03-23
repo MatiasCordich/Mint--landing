@@ -3,24 +3,32 @@
         "id_card": 1,
         "titulo": "Basic",
         "texto1": "Competitive rates, ideal for savers.",
-        "texto2": "Simple banking solution, no hidden fees.",
-        "texto3": "Access to wide network of ATMs.",
-        "texto4": "Low balance maintenance and user-friendly."
+        "texto2": "Clear fees, no hidden charges.",
+        "texto3": "Wide ATM network access.",
+        "texto4": "Low maintenance, user-friendly."
     },
     {
         "id_card": 2,
-        "titulo": "Premium",
-        "texto1": "All the benefits of Basic",
-        "texto2": "Comprehensive banking solution, transparent fees.",
-        "texto3": "Access to global network of ATMs.",
-        "texto4": "Efficient account management and customer support."
+        "titulo": "Gold",
+        "texto1": "All the benefits of Basic.",
+        "texto2": "Transparent fees, global ATMs.",
+        "texto3": "Efficient management, great support.",
+        "texto4": "Smooth account handling, prompt service."
     },
     {
         "id_card": 3,
+        "titulo": "Premium",
+        "texto1": "All the benefits of Gold.",
+        "texto2": "No hidden charges, sophisticated options.",
+        "texto3": "Luxury amenities, exclusive access.",
+        "texto4": "Elite assistance, privacy ensured."
+    },
+    {
+        "id_card": 4,
         "titulo": "Eminent",
         "texto1": "All the benefits of Premium.",
-        "texto2": "Sophisticated banking options, no hidden charges.",
-        "texto3": "Exclusive access to luxury amenities and perks.",
-        "texto4": "Concierge-level assistance and privacy protection."
+        "texto2": "No hidden charges, sophisticated options.",
+        "texto3": "Luxury perks, exclusive amenities.",
+        "texto4": "Top-tier assistance, privacy assured."
     }
 ]
