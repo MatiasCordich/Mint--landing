@@ -95,7 +95,7 @@ export default defineComponent({
     gap: 4rem;
     padding: 2rem;
     border: 1px dotted var(--font-color);
-    border-radius: 2rem;
+    border-radius:1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 

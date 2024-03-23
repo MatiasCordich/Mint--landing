@@ -20,19 +20,19 @@
 
         <ul class="menu-overlay" :class="{ 'menu-open': isMenuOpen }">
             <li>
-                <RouterLink to="">Business</RouterLink>
+                <RouterLink to="/">Home</RouterLink>
             </li>
             <li>
-                <RouterLink to="">Pricing</RouterLink>
+                <RouterLink to="/pricing">Pricing</RouterLink>
             </li>
             <li>
-                <RouterLink to="">Services</RouterLink>
+                <RouterLink to="/services">Services</RouterLink>
             </li>
             <li>
-                <RouterLink to="">Solutions</RouterLink>
+                <RouterLink to="/solutions">Solutions</RouterLink>
             </li>
             <li>
-                <RouterLink to="">FAQ</RouterLink>
+                <RouterLink to="/questions">FAQ</RouterLink>
             </li>
             <div class="btn_themes-container">
                 <h4>Themes</h4>
