@@ -29,8 +29,8 @@
         <form>
           <input type="email" placeholder="Email">
           <button class="btn_form" type="submit">
-            <img class="btn_form-icon" width="40" height="40"
-              src="https://img.icons8.com/ios-filled/0F0F0F/50/0F0F0Fcircled-left-2.png" alt="circled-left-2" />
+            <img class="btn_form-icon" width="50" height="50" src="https://img.icons8.com/ios-filled/50/circled-left-2.png"
+              alt="circled-left-2" />
           </button>
         </form>
       </div>
