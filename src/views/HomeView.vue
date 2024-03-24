@@ -51,37 +51,20 @@
     </section>
   </Container>
   <Container>
-    <div class="grid_section-titles">
-      <h3 class="grid_sections-title-mini">Your wallet, your world</h3>
-      <h2 class="grid_sections-title">
+    <section class="benefits">
+      <h3 class="benefits-title-mini">Your wallet, your world</h3>
+      <h2 class="benefits-title">
         Infinite possibilities
       </h2>
-      <section class="grid_benefits">
-        <div class="dummy g-1">
-          <img width="128" height="128" src="https://img.icons8.com/wired/128/0f0f0f/bitcoin.png" alt="bitcoin" />
-        </div>
-        <div class="dummy g-2">
-          <img src="https://img.icons8.com/wired/128/0f0f0f/bank-card-back-side.png" alt="bank-card-back-side" />
-        </div>
-        <div class="dummy g-3">
-          <img src="https://img.icons8.com/wired/128/0f0f0f/security.png" alt="security" />
-        </div>
-        <div class="dummy g-4">
-          <img src="https://img.icons8.com/wired/128/0f0f0f/service.png" alt="service" />
-
-
-        </div>
-        <div class="dummy g-5">
-          <img width="128" height="128" src="https://img.icons8.com/wired/128/0f0f0f/recycle-sign.png"
-            alt="recycle-sign" />
-        </div>
-        <div class="dummy g-6">
-          <img width="128" height="128" src="https://img.icons8.com/wired/128/vip.png" alt="vip" />
-
-
-        </div>
+      <section class="benefits_container">
+        <section class="benefits_description"></section>
+        <section class="benefits_grid">
+          <CardIcon v-for="(card, index) in cardsIcon" :key="index" :imageUrl="card.imageUrl" :title="card.title"
+            :text="card.text" :cardClass="card.cardClass" :altDescription="card.altDescription" />
+        </section>
       </section>
-    </div>
+
+    </section>
 
 
   </Container>
@@ -92,8 +75,10 @@
 import Container from '@/components/Layer.vue';
 import Carousel from '@/components/Carousel.vue';
 import Card from '@/components/Card.vue'
+import CardIcon from '@/components/CardIcon.vue'
 import logoSVG from '@/assets/img-2.png';
-import jsonData from '@/data/card.json'
+import cardData from '@/data/card.json'
+import cardDataIcon from "@/data/icons.json"
 import { ref } from 'vue';
 
 
@@ -101,7 +86,8 @@ export default {
   components: {
     Container,
     Carousel,
-    Card
+    Card,
+    CardIcon
   },
   setup() {
     const logo = ref(logoSVG);
@@ -110,11 +96,15 @@ export default {
   },
   data() {
     return {
-      cards: []
+      cards: [],
+      cardsIcon: []
     }
   },
   created() {
-    this.cards = jsonData
+    this.cards = cardData
+  },
+  mounted() {
+    this.cardsIcon = cardDataIcon
   }
 }
 
@@ -298,43 +288,53 @@ export default {
   width: 100%;
 }
 
-/* ------------- GRID SECTION -------------  */
-.grid_section-titles {
+/* ------------- BENEFITS -------------  */
+
+.benefits {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
-.grid_sections-title-mini {
+.benefits-title-mini,
+.benefits-title {
+  width: 100%;
   text-align: left;
-  width: 100%;
-  font-size: 1.6rem;
-  font-weight: 600;
 }
 
-.grid_sections-title {
+.benefits-title-mini {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.benefits-title {
   font-size: 5rem;
   font-weight: 800;
 }
 
-.grid_benefits {
+.benefits_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.benefits_description {
+  width: 100%;
+  height: 90rem;
+}
+
+
+.benefits_grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
-.dummy {
-  width: 100%;
-  height: fit-content;
-  border: 2px dotted var(--font-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  border-radius: 3rem;
-}
+
 
 /* ------------- MEDIA QUERIES -------------  */
 
@@ -353,20 +353,27 @@ export default {
     justify-content: center;
   }
 
-  .grid_benefits {
+  .benefits_grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
   }
 
+  .g-1,
+  .g-2,
+  .g-3,
+  .g-4,
+  .g-5,
+  .g-6 {
+    height: 100%;
+  }
+
   .g-1 {
     grid-area: 1/3/3/5;
-    height: 100%;
   }
 
   .g-2 {
     grid-area: 3/ 3 / 4 / 5;
-    height: 100%;
   }
 
   .g-3 {
@@ -379,16 +386,22 @@ export default {
 
   .g-5 {
     grid-area: 2 / 2 / 5;
-    height: 100%
   }
 
   .g-6 {
     grid-area: 2 / 1 / 5;
-    height: 100%;
   }
 
+}
 
+@media (min-width: 1440px) {
+  .benefits_container {
+    flex-direction: row;
+  }
 
-
+  .benefits_grid,
+  .benefits_description {
+    width: 50%;
+  }
 }
 </style>

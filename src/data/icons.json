@@ -1,0 +1,44 @@
+[
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/0f0f0f/bitcoin.png",
+        "altDescription": "icon-grid-img-1",
+        "title": "Bitcoin",
+        "text": "Digital gold for modern age",
+        "cardClass" : "g-1"
+    },
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/0f0f0f/bank-card-back-side.png",
+        "altDescription": "icon-grid-img-2",
+        "title": "Credit Card",
+        "text": "Swipe for rewards and convenience",
+        "cardClass" : "g-2"
+    },
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/0f0f0f/security.png",
+        "altDescription": "icon-grid-img-3",
+        "title": "Security",
+        "text": "Protect your assets with care",
+        "cardClass" : "g-3"
+    },
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/0f0f0f/service.png",
+        "altDescription": "icon-grid-img-4",
+        "title": "24/7 Support",
+        "text": "Always here for your needs",
+        "cardClass" : "g-4"
+    },
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/0f0f0f/recycle-sign.png",
+        "altDescription": "icon-grid-img-5",
+        "title": "Ecological",
+        "text": "Go green with sustainable solutions",
+        "cardClass" : "g-5"
+    },
+    {
+        "imageUrl": "https://img.icons8.com/wired/128/vip.png",
+        "altDescription": "icon-grid-img-6",
+        "title": "VIP",
+        "text": "Experience luxury at its finest",
+        "cardClass" : "g-6"
+    }
+]
