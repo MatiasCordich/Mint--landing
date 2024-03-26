@@ -127,7 +127,7 @@ import Card from '@/components/Card.vue'
 import CardIcon from '@/components/CardIcon.vue'
 import cardData from '@/data/card.json'
 import cardDataIcon from "@/data/icons.json"
-import imgHeader from '@/assets/img-svg.svg'
+import imgHeader from '@/assets/img-0.png'
 import { ref } from 'vue';
 
 
@@ -305,7 +305,7 @@ export default {
 }
 
 .hero_box-2 img {
-
+  width: 60rem;
   max-width: 100%;
 }
 
