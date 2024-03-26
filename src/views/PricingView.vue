@@ -1,8 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is pricing price</h1>
-  </div>
+ <Container>
+  <header class="hero_pricing">
+    
+  </header>
+ </Container>
 </template>
+
+<script>
+import Container from '@/components/Layer.vue';
+
+export default {
+  components: {
+    Container
+  }
+}
+</script>
 
 <style>
 @media (min-width: 1024px) {

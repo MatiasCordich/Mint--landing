@@ -125,9 +125,9 @@ import Container from '@/components/Layer.vue';
 import Carousel from '@/components/Carousel.vue';
 import Card from '@/components/Card.vue'
 import CardIcon from '@/components/CardIcon.vue'
-import logoSVG from '@/assets/img-2.png';
 import cardData from '@/data/card.json'
 import cardDataIcon from "@/data/icons.json"
+import imgHeader from '@/assets/img-svg.svg'
 import { ref } from 'vue';
 
 
@@ -139,7 +139,7 @@ export default {
     CardIcon
   },
   setup() {
-    const logo = ref(logoSVG);
+    const logo = ref(imgHeader);
 
     return { logo };
   },
@@ -300,14 +300,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border: 1px solid var(--font-color);
   border-radius: 6rem;
   padding: 2rem;
 }
 
 .hero_box-2 img {
-  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.404));
+
+  max-width: 100%;
 }
 
 /* ------------- SECTION PLANS -------------  */
