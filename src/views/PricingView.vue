@@ -4,7 +4,9 @@
       <h2>We have what you need</h2>
       <p>You can start using our services for <span>$0</span> and without any kind of cost, then you can opt for our
         plans to get new and better <span>benefits</span>.</p>
-      <button @click="scrollToSection">Ir a la seccion</button>
+      <button class="btn_scrollto"@click="scrollToSection">
+        See more
+        <img width="80" height="80" src="https://img.icons8.com/ios/100/long-arrow-down.png" alt="long-arrow-down"/></button>
     </header>
   </Container>
 
@@ -16,6 +18,7 @@
       </div>
       <div class="pricing_free-section">
         <h3>Step up to the next level</h3>
+        <div class="container_p-free"></div>
       </div>
     </section>
   </Container>
@@ -60,6 +63,7 @@ export default {
   align-items: center;
   gap: 5rem;
   height: 100vh;
+  margin-top: 10rem
 }
 
 .hero_pricing h2 {
@@ -79,6 +83,19 @@ export default {
 
 span {
   font-weight: 800;
+}
+
+.btn_scrollto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  margin-top: 10rem
+}
+
+.btn_scrollto img:hover{
+  animation: MoveUpDown 1s linear infinite;
 }
 
 .section_pricing {
@@ -105,6 +122,15 @@ span {
   height: 80rem;
   border: 2px dotted var(--font-color);
   clip-path: polygon(100% 0, 100% 79%, 79% 100%, 0% 100%, 0 47%, 0% 0%);
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @media (min-width: 900px) {
